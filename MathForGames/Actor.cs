@@ -28,7 +28,7 @@ namespace MathForGames
 
         public string Name
         {
-
+            get { return _name; }
         }
 
         public Vector2 Position

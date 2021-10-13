@@ -51,7 +51,15 @@ namespace MathForGames
 
         public override void OnCollision(Actor actor)
         {
-            Position -= Velocity;
+            if (actor.Name == "Wall")
+                Position -= Velocity;
+
+            if (actor.Name == "Goal")
+                Engine.CloseApplication();
+
+            if (actor.Name == "Bullet")
+                Engine.CloseApplication();
+
         }
     }
 }

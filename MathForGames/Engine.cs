@@ -42,19 +42,54 @@ namespace MathForGames
         private void Start()
         {
             Scene scene = new Scene();
-            Actor wall = new Actor('|', 0, 0, "Actor1", ConsoleColor.Yellow);
-            Actor wall1 = new Actor('|', 0, 1, "Actor1", ConsoleColor.Yellow);
-            Actor wall2 = new Actor('|', 3, 0,"Actor1", ConsoleColor.Yellow);
-            Actor wall3 = new Actor('|', 3, 1, "Actor1", ConsoleColor.Yellow);
-            Actor wall4 = new Actor('|', 0, 1, "Actor1", ConsoleColor.Yellow);
-            Actor wall5 = new Actor('|', 2, 0, "Actor1", ConsoleColor.Yellow);
 
-            Player player = new Player('o', 1, 1, 1, "Player", ConsoleColor.Blue);
+            //top walls
+            for (int i = 3; i < 59; i++)
+            {
+                Actor wall = new Actor('_', i, 1, "Wall", ConsoleColor.Yellow);
+                scene.AddActor(wall);
+            }
+
+            //left walls
+            for (int i = 1; i < 20; i++)
+            {
+                Actor wall1 = new Actor('|', 0, i, "Wall", ConsoleColor.Yellow);
+                scene.AddActor(wall1);
+            }
+            
+            //bottom walls
+            for (int i = 1; i < 60; i++)
+            {
+                Actor wall2 = new Actor('_', i, 19, "Wall", ConsoleColor.Yellow);
+                scene.AddActor(wall2);
+            }
+
+            //right wall
+            for (int i = 2; i < 20; i++)
+            {
+                Actor wall3 = new Actor('|', 59, i, "Wall", ConsoleColor.Yellow);
+                scene.AddActor(wall3);
+            }
+
+            Actor rightbullet = new Actor('*', 3, 8,  "RBullet", ConsoleColor.Red);
+            Actor downbullet = new Actor('*', 17, 12, "DBullet", ConsoleColor.Red);
+
+            Actor wall5 = new Actor('_', 1, 0, "Wall", ConsoleColor.Yellow);
+            Actor wall6 = new Actor('_', 2, 0, "Wall", ConsoleColor.Yellow);
+            Actor wall7 = new Actor('|', 3, 1, "Wall", ConsoleColor.Yellow);
+            
+            Actor goal = new Actor('0', 55,17, "Goal", ConsoleColor.Green);
+
+            Player player = new Player('o', 1, 1, 2, "Player", ConsoleColor.Blue);
+
             scene.AddActor(player);
-            scene.AddActor(wall);
-            scene.AddActor(wall1);
-            scene.AddActor(wall2);
-            scene.AddActor(wall3);
+            scene.AddActor(goal);
+            scene.AddActor(wall5);
+            scene.AddActor(wall6);
+            scene.AddActor(wall7);
+            scene.AddActor(rightbullet);
+            scene.AddActor(downbullet);
+
 
             _currentSceneIndex = AddScene(scene);
 
@@ -72,6 +107,8 @@ namespace MathForGames
 
             while (Console.KeyAvailable)
                 Console.ReadKey(true);
+
+            
         }
 
         /// <summary>
