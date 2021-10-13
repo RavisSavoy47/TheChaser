@@ -14,6 +14,7 @@ namespace MathForGames
         private static Icon[,] _buffer;
 
 
+
         /// <summary>
         /// Called to begin the application
         /// </summary>
@@ -41,12 +42,19 @@ namespace MathForGames
         private void Start()
         {
             Scene scene = new Scene();
-            Actor actor = new Actor('P', 0, 0, "Actor1", ConsoleColor.Yellow);
-            Actor actor2 = new Actor('A', new MathLibrary1.Vector2 { X = 10, Y = 4 }, "Actor2", ConsoleColor.Blue);
-            Player player = new Player('@', 5, 5, 1, "Player", ConsoleColor.DarkMagenta);
+            Actor wall = new Actor('|', 0, 0, "Actor1", ConsoleColor.Yellow);
+            Actor wall1 = new Actor('|', 0, 1, "Actor1", ConsoleColor.Yellow);
+            Actor wall2 = new Actor('|', 3, 0,"Actor1", ConsoleColor.Yellow);
+            Actor wall3 = new Actor('|', 3, 1, "Actor1", ConsoleColor.Yellow);
+            Actor wall4 = new Actor('|', 0, 1, "Actor1", ConsoleColor.Yellow);
+            Actor wall5 = new Actor('|', 2, 0, "Actor1", ConsoleColor.Yellow);
+
+            Player player = new Player('o', 1, 1, 1, "Player", ConsoleColor.Blue);
             scene.AddActor(player);
-            scene.AddActor(actor2);
-            scene.AddActor(actor);
+            scene.AddActor(wall);
+            scene.AddActor(wall1);
+            scene.AddActor(wall2);
+            scene.AddActor(wall3);
 
             _currentSceneIndex = AddScene(scene);
 

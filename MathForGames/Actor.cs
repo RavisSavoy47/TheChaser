@@ -26,6 +26,11 @@ namespace MathForGames
             get { return _started; }
         }
 
+        public string Name
+        {
+
+        }
+
         public Vector2 Position
         {
             get { return _position; }
@@ -34,7 +39,7 @@ namespace MathForGames
 
         public Icon Icon
         {
-            get { return _icon; };
+            get { return _icon; }
         }
 
         public Actor(char icon, float x, float y, string name = "Actor", ConsoleColor color = ConsoleColor.White) :
@@ -54,7 +59,7 @@ namespace MathForGames
 
         public virtual void Update()
         {
-            _position.X = Position.X + 1;
+            
         }
 
         public virtual void Draw()

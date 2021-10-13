@@ -51,7 +51,7 @@ namespace MathForGames
 
         public override void OnCollision(Actor actor)
         {
-            Engine.CloseApplication();
+            Position -= Velocity;
         }
     }
 }
