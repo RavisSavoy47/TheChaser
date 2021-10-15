@@ -27,11 +27,15 @@ namespace MathForGames
         public override void Update()
         {
             _health.Text = "Health: " + _player.Health.ToString();
-            _lives.Text = "Lives: " + _player.Lives.ToString();
+            _health.Update();
+
+            _lives.Text = "Live: " + _player.Lives.ToString();
+            _lives.Update();
         }
 
         public override void Draw()
         {
+            base.Draw();
             _health.Draw();
             _lives.Draw();
         }

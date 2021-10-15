@@ -41,8 +41,7 @@ namespace MathForGames
             if (actor.Name == "Wall")
                 _moveDirection *= -1;
 
-            if (actor.Name == "Player")
-                Engine.CloseApplication();
+
         }
     }
 }

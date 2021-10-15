@@ -72,7 +72,19 @@ namespace MathForGames
                 Engine.CloseApplication();
 
             if (actor.Name == "Bullet")
+            {
+                _health--;
+
+                if (_health <= 0)
+                {
+                    _health = 5;
+                    _lives--;
+                    Position = new Vector2 { X = 1, Y = 3 };
+                } 
+                else if(_lives <= 0)
                 Engine.CloseApplication();
+            }
+
         }
     }
 }

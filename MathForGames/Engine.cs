@@ -71,31 +71,40 @@ namespace MathForGames
                 scene.AddActor(wall3);
             }
 
-            Enemy rightbullet = new Enemy('*', 3, 8, 1, "Bullet", ConsoleColor.Red);
-            Enemy downbullet = new Enemy('*', 17, 12, 1, "Bullet", ConsoleColor.Red);
-            Enemy leftbullet = new Enemy('*', 5, 14, 1, "Bullet", ConsoleColor.Red);
-            Enemy upbullet = new Enemy('*', 4, 4, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet = new Enemy('*', 3, 8, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet1 = new Enemy('*', 48, 12, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet2 = new Enemy('*', 5, 14, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet3 = new Enemy('*', 18, 4, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet4 = new Enemy('*', 28, 8, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet5 = new Enemy('*', 35, 12, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet6 = new Enemy('*', 10, 14, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet7 = new Enemy('*', 20, 4, 1, "Bullet", ConsoleColor.Red);
 
-            for (int i = 2; i < 20; i++)
-            {
-                Enemy bullet1 = new Enemy('*', 15, 4, 1, "Bullet", ConsoleColor.Red);
-                scene.AddActor(bullet1);
-            }
 
+            //Creates the goal and player
             Actor goal = new Actor('O', 55,17, "Goal", ConsoleColor.Green);
-
             Player player = new Player('@', 1, 3, 1, "Player", ConsoleColor.Blue);
-
-            UIText healtText = new UIText(70, 3, "Health", ConsoleColor.Cyan, 25, 20, "Get to the O to survie!");
-
-            scene.AddUIElement(healtText);
             scene.AddActor(player);
             scene.AddActor(goal);
-            scene.AddActor(rightbullet);
-            scene.AddActor(downbullet);
-            scene.AddActor(leftbullet);
-            scene.AddActor(upbullet);
 
+            //Create and add UI for scene
+            UIText HubText = new UIText(70, 0, "Hub", ConsoleColor.Cyan, 25, 1, "Get to the O to survie!");
+            UIText healthText = new UIText(70, 2, "Health", ConsoleColor.Cyan, 25, 1);
+            UIText LivesText = new UIText(70, 4, "Lives", ConsoleColor.Cyan, 25, 1);
+            PlayerHub playerHub = new PlayerHub(player, healthText, LivesText);
+            scene.AddUIElement(HubText);
+            scene.AddUIElement(playerHub);
+            
+
+            scene.AddActor(bullet);
+            scene.AddActor(bullet);
+            scene.AddActor(bullet1);
+            scene.AddActor(bullet2);
+            scene.AddActor(bullet3);
+            scene.AddActor(bullet4);
+            scene.AddActor(bullet5);
+            scene.AddActor(bullet6);
+            scene.AddActor(bullet7);
 
             _currentSceneIndex = AddScene(scene);
             _scenes[_currentSceneIndex].Start();
@@ -110,6 +119,7 @@ namespace MathForGames
         {
             _scenes[_currentSceneIndex].Update();
 
+            _scenes[_currentSceneIndex].UpdateUI();
             while (Console.KeyAvailable)
                 Console.ReadKey(true);
 
