@@ -8,9 +8,22 @@ namespace MathForGames
     class Player : Actor
     {
         private float _speed;
-   
-        public Player(char icon, float x, float y, float speed, Vector2 velocity, string name = "Player", ConsoleColor color = ConsoleColor.White) 
-            : base(icon, x, y, velocity, name, color)
+        private Vector2 _velocity;
+
+        public float Speed
+        {
+            get { return _speed; }
+            set { _speed = value; }
+        }
+
+        public Vector2 Velocity
+        {
+            get { return _velocity; }
+            set { _velocity = value; }
+        }
+
+        public Player(char icon, float x, float y, float speed, string name = "Player", ConsoleColor color = ConsoleColor.White) 
+            : base(icon, x, y, name, color)
         {
             _speed = speed;
         }
