@@ -9,6 +9,20 @@ namespace MathForGames
     {
         private float _speed;
         private Vector2 _velocity;
+        private float _health = 5;
+        private float _lives = 5;
+
+        public float Health
+        {
+            get { return _health; }
+            set { _health = value; }
+        }
+
+        public float Lives
+        {
+            get { return _lives; }
+            set { _lives = value; }
+        }
 
         public float Speed
         {

@@ -75,14 +75,20 @@ namespace MathForGames
             Enemy downbullet = new Enemy('*', 17, 12, 1, "Bullet", ConsoleColor.Red);
             Enemy leftbullet = new Enemy('*', 5, 14, 1, "Bullet", ConsoleColor.Red);
             Enemy upbullet = new Enemy('*', 4, 4, 1, "Bullet", ConsoleColor.Red);
-            
+
+            for (int i = 2; i < 20; i++)
+            {
+                Enemy bullet1 = new Enemy('*', 15, 4, 1, "Bullet", ConsoleColor.Red);
+                scene.AddActor(bullet1);
+            }
+
             Actor goal = new Actor('O', 55,17, "Goal", ConsoleColor.Green);
 
             Player player = new Player('@', 1, 3, 1, "Player", ConsoleColor.Blue);
 
             UIText healtText = new UIText(70, 3, "Health", ConsoleColor.Cyan, 25, 20, "Get to the O to survie!");
 
-            scene.AddActor(healtText);
+            scene.AddUIElement(healtText);
             scene.AddActor(player);
             scene.AddActor(goal);
             scene.AddActor(rightbullet);
@@ -123,6 +129,7 @@ namespace MathForGames
 
             //Adds all actors icons to buffer
             _scenes[_currentSceneIndex].Draw();
+            _scenes[_currentSceneIndex].DrawUI();
 
             //Iterate through buffer
             for (int y = 0; y < _buffer.GetLength(1); y++)
