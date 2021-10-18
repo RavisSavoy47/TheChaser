@@ -9,8 +9,8 @@ namespace MathForGames
     {
         private float _speed;
         private Vector2 _velocity;
-        private float _health = 5;
-        private float _lives = 5;
+        private float _health = 2;
+        private float _lives = 2;
 
         public float Health
         {
@@ -77,7 +77,7 @@ namespace MathForGames
 
                 if (_health <= 0)
                 {
-                    _health = 5;
+                    _health = 2;
                     _lives--;
                     Position = new Vector2 { X = 1, Y = 3 };
                 } 
