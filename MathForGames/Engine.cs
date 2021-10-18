@@ -86,6 +86,10 @@ namespace MathForGames
             Enemy bullet12 = new Enemy('*', 50, 12, 1, "Bullet", ConsoleColor.Red);
             Enemy bullet13 = new Enemy('*', 55, 14, 1, "Bullet", ConsoleColor.Red);
             Enemy bullet14 = new Enemy('*', 23, 4, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet15 = new Enemy('*', 31, 8, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet16 = new Enemy('*', 19, 12, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet17 = new Enemy('*', 32, 14, 1, "Bullet", ConsoleColor.Red);
+            Enemy bullet18 = new Enemy('*', 15, 4, 1, "Bullet", ConsoleColor.Red);
 
             //Creates the goal and player
             Actor goal = new Actor('O', 55,17, "Goal", ConsoleColor.Green);
@@ -118,6 +122,10 @@ namespace MathForGames
             scene.AddActor(bullet12);
             scene.AddActor(bullet13);
             scene.AddActor(bullet14);
+            scene.AddActor(bullet15);
+            scene.AddActor(bullet16);
+            scene.AddActor(bullet17);
+            scene.AddActor(bullet18);
 
             _currentSceneIndex = AddScene(scene);
             _scenes[_currentSceneIndex].Start();
