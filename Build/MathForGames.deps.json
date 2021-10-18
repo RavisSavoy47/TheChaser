@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MathForGames/1.0.0": {
+        "dependencies": {
+          "MathLibrary1": "1.0.0"
+        },
+        "runtime": {
+          "MathForGames.dll": {}
+        }
+      },
+      "MathLibrary1/1.0.0": {
+        "runtime": {
+          "MathLibrary1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MathForGames/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MathLibrary1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
